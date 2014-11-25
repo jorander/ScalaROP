@@ -1,1 +1,6 @@
 /target/
+/org.eclipse.m2e.core.prefs
+*.cache
+*.classpath
+*.project
+/.settings/
