@@ -1,9 +1,11 @@
 package jorander
 
 import scalarop._
-
 import org.scalatest._
+import org.junit.runner.RunWith
+import org.scalatest.junit.JUnitRunner
 
+@RunWith(classOf[JUnitRunner])
 class ScalaROPSpec extends FlatSpec with Matchers {
   val intToString = (i: Int) => i.toString
   val stringLength = (s: String) => s.length
