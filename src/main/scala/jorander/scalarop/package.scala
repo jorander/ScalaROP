@@ -35,6 +35,12 @@ package object scalarop {
   }
 
   implicit def data2ComposableData[A](d: A) = ComposableData(d)
+  
+  sealed case class ComposableStream[A](d: Stream[A]) {
+    def ->>[B](f: Stream[A] => B) = f(d)
+  }
+
+  implicit def data2ComposableStream[A](d: Stream[A]) = ComposableStream(d)
 
   /**
    * The two-track type. Constructed as Success or Failure. Can be used

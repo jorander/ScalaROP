@@ -4,6 +4,7 @@ import scalarop._
 import org.scalatest._
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
+import scala.collection.immutable.Range
 
 @RunWith(classOf[JUnitRunner])
 class ScalaROPSpec extends FlatSpec with Matchers {
@@ -26,6 +27,13 @@ class ScalaROPSpec extends FlatSpec with Matchers {
 
   it should "be able to push data through several composed functions" in {
     123 ->> intToString ->> stringLength should be(stringLength(intToString(123)))
+  }
+  
+  val streamOfIntToSum = (s: Stream[Int]) => s.sum
+  val s = (1 to 5).toStream
+  it should "be able to push a Stream of data a function accepting a Stream" in {
+    s.toStream ->> streamOfIntToSum should be(streamOfIntToSum(s))
+    
   }
 
   def validateStringNotEmpty(s: String) = if (!s.isEmpty) succeed(s) else scalarop.fail("String should not be empty")
