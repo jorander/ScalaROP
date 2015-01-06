@@ -7,7 +7,7 @@ Scala Test and ROP. It's an experiment and should be treated as such. That said,
 happy to accept comments on how the implementation might be improved.
 
 In my [TantrixSevenTilesPuzzleResolver](https://github.com/jorander/TantrixSevenTilesPuzzleResolver) I've used
-my implementation in the SevenTilesPuzzleResolver class.
+my implementation in the [SevenTilesPuzzleResolver class](https://github.com/jorander/TantrixSevenTilesPuzzleResolver/blob/master/src/main/scala/jorander/tantrixstpr/SevenTilesPuzzleResolver.scala).
 
 Best Regards,
  
